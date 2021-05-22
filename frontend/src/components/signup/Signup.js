@@ -27,6 +27,7 @@ class Signup extends Component {
       password: this.state.password
     };
     console.log("Sign up " + userData.username + " " + userData.password);
+    this.setState({username: "", password: ""});
   };
 
   render() {
@@ -41,7 +42,7 @@ class Signup extends Component {
                 <Form.Control
                   type="text"
                   name="username"
-                  placeholder="Enter user name"
+                  placeholder="Enter username"
                   value={this.state.username}
                   onChange={this.onChange}
                 />
@@ -54,7 +55,7 @@ class Signup extends Component {
                   type="password"
                   name="password"
                   placeholder="Enter password"
-                  value={this.password}
+                  value={this.state.password}
                   onChange={this.onChange}
                 />
                 <Form.Control.Feedback type="invalid"></Form.Control.Feedback>
