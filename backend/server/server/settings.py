@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_onkrj8&uwtdan&hc7dy1^j=3$oc(54!q#)2k^rp&va!&g%(ma
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["127.0.0.1"]
 
 # Application definition
 
@@ -40,6 +40,13 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
     'apps.accounts',
+    'corsheaders',
+]
+
+# define which origins are allowed
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "http://127.0.0.1:3000"
 ]
 
 #configure DRF
@@ -60,6 +67,7 @@ DJOSER = {
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
