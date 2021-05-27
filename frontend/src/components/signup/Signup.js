@@ -12,7 +12,7 @@ import {
   FormControl
 } from "react-bootstrap";
 
-import { signupNewUser } from "./SignupActions"; // new import
+import { signupNewUser } from "./SignupActions"; 
 
 class Signup extends Component {
   constructor(props) {
