@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'djoser',
     'apps.accounts',
     'corsheaders',
+    'apps.notes',
 ]
 
 # define which origins are allowed
