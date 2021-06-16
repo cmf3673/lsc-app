@@ -16,9 +16,9 @@ export const getCourses = () => dispatch => {
     });
 };
 
-export const addCourse = note => dispatch => {
+export const addCourse = course => dispatch => {
   axios
-    .post("/api/v1/notes/", note)
+    .post("/api/v1/notes/", course)
     .then(response => {
       dispatch({
         type: ADD_COURSE,
@@ -44,9 +44,9 @@ export const deleteCourse = id => dispatch => {
       });
   };
   
-  export const updateCourse = (id, note) => dispatch => { //getting id for note to change and new note
+  export const updateCourse = (id, course) => dispatch => { //getting id for note to change and new note
     axios
-      .patch(`/api/v1/notes/${id}/`, note)
+      .patch(`/api/v1/notes/${id}/`, course)
       .then(response => {
         dispatch({
           type: UPDATE_COURSE,

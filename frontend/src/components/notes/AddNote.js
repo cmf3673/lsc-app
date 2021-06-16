@@ -17,10 +17,10 @@ class AddCourse extends Component {
   };
 
   onAddClick = () => {
-    const note = {
+    const course = {
       content: this.state.content
     };
-    this.props.addCourse(note);
+    this.props.addCourse(course);
   };
 
   render() {
@@ -40,7 +40,7 @@ class AddCourse extends Component {
           </Form.Group>
         </Form>
         <Button variant="success" onClick={this.onAddClick}>
-          Add note
+          Add course
         </Button>
       </div>
     );

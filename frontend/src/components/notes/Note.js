@@ -5,11 +5,12 @@ import { withRouter } from "react-router-dom";
 import { deleteCourse, updateCourse } from "./NotesActions";
 import { Button } from "react-bootstrap";
 
-class Note extends Component {
+class Course extends Component {
   onDeleteClick = () => {
-    const { note } = this.props;
-    this.props.deleteCourse(note.id);
+    const { course } = this.props;
+    this.props.deleteCourse(course.id);
   };
+
 //   onUpperCaseClick = () => {
 //     const { note } = this.props;
 //     this.props.updateNote(note.id, {
@@ -22,13 +23,14 @@ class Note extends Component {
 //       content: note.content.toLowerCase()
 //     });
 //   };
+
   render() {
-    const { note } = this.props;
+    const { course } = this.props;
     return (
       <div>
         <hr />
         <p>
-          (id:{note.id}) {note.content}
+          (id:{course.id}) {course.content}
         </p>
         <Button variant="danger" size="sm" onClick={this.onDeleteClick}>
           Delete
@@ -38,11 +40,11 @@ class Note extends Component {
   }
 }
 
-Note.propTypes = {
-  note: PropTypes.object.isRequired
+Course.propTypes = {
+  course: PropTypes.object.isRequired
 };
 const mapStateToProps = state => ({});
 
 export default connect(mapStateToProps, { deleteCourse, updateCourse })(
-  withRouter(Note)
+  withRouter(Course)
 );
