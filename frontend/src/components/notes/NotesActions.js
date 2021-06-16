@@ -1,13 +1,13 @@
 import axios from "axios";
 import { toastOnError } from "../../utils/Utils";
-import { GET_NOTES, ADD_NOTE, DELETE_NOTE, UPDATE_NOTE } from "./NotesTypes";
+import { GET_CLASSES, ADD_CLASS, DELETE_CLASS, UPDATE_CLASS } from "./NotesTypes";
 
 export const getNotes = () => dispatch => {
   axios
     .get("/api/v1/notes/")
     .then(response => {
       dispatch({
-        type: GET_NOTES,
+        type: GET_CLASSES,
         payload: response.data //
       });
     })
@@ -21,7 +21,7 @@ export const addNote = note => dispatch => {
     .post("/api/v1/notes/", note)
     .then(response => {
       dispatch({
-        type: ADD_NOTE,
+        type: ADD_CLASS,
         payload: response.data // Sending 
       });
     })
@@ -30,12 +30,12 @@ export const addNote = note => dispatch => {
     });
 };
 
-export const deleteNote = id => dispatch => {
+export const deleteClass = id => dispatch => {
     axios
       .delete(`/api/v1/notes/${id}/`)
       .then(response => {
         dispatch({
-          type: DELETE_NOTE,
+          type: DELETE_CLASS,
           payload: id // just sending id so know which to delete
         });
       })
@@ -44,12 +44,12 @@ export const deleteNote = id => dispatch => {
       });
   };
   
-  export const updateNote = (id, note) => dispatch => { //getting id for note to chnage and new note
+  export const updateClass = (id, note) => dispatch => { //getting id for note to chnage and new note
     axios
       .patch(`/api/v1/notes/${id}/`, note)
       .then(response => {
         dispatch({
-          type: UPDATE_NOTE,
+          type: UPDATE_CLASS,
           payload: response.data
         });
       })

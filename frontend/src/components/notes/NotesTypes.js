@@ -1,4 +1,4 @@
-export const GET_NOTES = "GET_NOTES";
-export const ADD_NOTE = "ADD_NOTE";
-export const DELETE_NOTE = "DELETE_NOTE";
-export const UPDATE_NOTE = "UPDATE_NOTE";
+export const GET_CLASSES = "GET_NOTES";
+export const ADD_CLASS = "ADD_NOTE";
+export const DELETE_CLASS = "DELETE_CLASS";
+export const UPDATE_CLASS = "UPDATE_CLASS";
