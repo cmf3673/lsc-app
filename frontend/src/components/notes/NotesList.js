@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { getNotes } from "./NotesActions";
+import { getCourses } from "./NotesActions";
 
 import Note from "./Note";
 
-class NotesList extends Component {
+class CourseList extends Component {
   componentDidMount() {
-    this.props.getNotes();
+    this.props.getCourses();
   }
 
   render() {
@@ -24,7 +24,7 @@ class NotesList extends Component {
 
     return (
       <div>
-        <h2>Notes</h2>
+        <h2>Courses</h2>
         {items}
         <hr />
       </div>
@@ -32,8 +32,8 @@ class NotesList extends Component {
   }
 }
 
-NotesList.propTypes = {
-  getNotes: PropTypes.func.isRequired,
+CourseList.propTypes = {
+  getCourses: PropTypes.func.isRequired,
   notes: PropTypes.object.isRequired
 };
 
@@ -42,5 +42,5 @@ const mapStateToProps = state => ({
 });
 
 export default connect(mapStateToProps, {
-  getNotes
-})(withRouter(NotesList));
+  getCourses
+})(withRouter(CourseList));

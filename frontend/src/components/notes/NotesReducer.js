@@ -1,4 +1,4 @@
-import { GET_CLASSES, ADD_CLASS, DELETE_CLASS, UPDATE_CLASS } from "./NotesTypes";
+import { GET_COURSES, ADD_COURSE, DELETE_COURSE, UPDATE_COURSE } from "./NotesTypes";
 
 const initialState = {
   notes: []
@@ -6,22 +6,22 @@ const initialState = {
 
 export const notesReducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_CLASSES:
+    case GET_COURSES:
       return {
         ...state,
         notes: action.payload // assign to notes in store
         };
-    case ADD_CLASS:
+    case ADD_COURSE:
       return {
         ...state,
         notes: [...state.notes, action.payload] // append new note to list
         };
-    case DELETE_CLASS:
+    case DELETE_COURSE:
         return {
           ...state,
           notes: state.notes.filter((item, index) => item.id !== action.payload) // set notes to list without deleted note
         };
-    case UPDATE_CLASS:
+    case UPDATE_COURSE:
         const updatedNotes = state.notes.map(item => {
           if (item.id === action.payload.id) {
             return { ...item, ...action.payload }; // assign payload to specific note to update

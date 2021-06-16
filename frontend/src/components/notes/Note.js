@@ -2,13 +2,13 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { deleteClass, updateClass } from "./NotesActions";
+import { deleteCourse, updateCourse } from "./NotesActions";
 import { Button } from "react-bootstrap";
 
 class Note extends Component {
   onDeleteClick = () => {
     const { note } = this.props;
-    this.props.deleteClass(note.id);
+    this.props.deleteCourse(note.id);
   };
 //   onUpperCaseClick = () => {
 //     const { note } = this.props;
@@ -43,6 +43,6 @@ Note.propTypes = {
 };
 const mapStateToProps = state => ({});
 
-export default connect(mapStateToProps, { deleteClass, updateClass })(
+export default connect(mapStateToProps, { deleteCourse, updateCourse })(
   withRouter(Note)
 );

@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
-import { addNote } from "./NotesActions";
+import { addCourse } from "./NotesActions";
 
-class AddNote extends Component {
+class AddCourse extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,20 +20,20 @@ class AddNote extends Component {
     const note = {
       content: this.state.content
     };
-    this.props.addNote(note);
+    this.props.addCourse(note);
   };
 
   render() {
     return (
       <div>
-        <h2>Add new note</h2>
+        <h2>Add new course</h2>
         <Form>
           <Form.Group controlId="contentId">
             <Form.Control
               as="textarea"
               rows={3}
               name="content"
-              placeholder="Enter note"
+              placeholder="Enter course name"
               value={this.content}
               onChange={this.onChange}
             />
@@ -47,10 +47,10 @@ class AddNote extends Component {
   }
 }
 
-AddNote.propTypes = {
-  addNote: PropTypes.func.isRequired
+AddCourse.propTypes = {
+  addCourse: PropTypes.func.isRequired
 };
 
 const mapStateToProps = state => ({});
 
-export default connect(mapStateToProps, { addNote })(withRouter(AddNote));
+export default connect(mapStateToProps, { addCourse })(withRouter(AddCourse));

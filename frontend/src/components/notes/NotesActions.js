@@ -1,13 +1,13 @@
 import axios from "axios";
 import { toastOnError } from "../../utils/Utils";
-import { GET_CLASSES, ADD_CLASS, DELETE_CLASS, UPDATE_CLASS } from "./NotesTypes";
+import { GET_COURSES, ADD_COURSE, DELETE_COURSE, UPDATE_COURSE } from "./NotesTypes";
 
-export const getNotes = () => dispatch => {
+export const getCourses = () => dispatch => {
   axios
     .get("/api/v1/notes/")
     .then(response => {
       dispatch({
-        type: GET_CLASSES,
+        type: GET_COURSES,
         payload: response.data //
       });
     })
@@ -16,12 +16,12 @@ export const getNotes = () => dispatch => {
     });
 };
 
-export const addNote = note => dispatch => {
+export const addCourse = note => dispatch => {
   axios
     .post("/api/v1/notes/", note)
     .then(response => {
       dispatch({
-        type: ADD_CLASS,
+        type: ADD_COURSE,
         payload: response.data // Sending 
       });
     })
@@ -30,12 +30,12 @@ export const addNote = note => dispatch => {
     });
 };
 
-export const deleteClass = id => dispatch => {
+export const deleteCourse = id => dispatch => {
     axios
       .delete(`/api/v1/notes/${id}/`)
       .then(response => {
         dispatch({
-          type: DELETE_CLASS,
+          type: DELETE_COURSE,
           payload: id // just sending id so know which to delete
         });
       })
@@ -44,12 +44,12 @@ export const deleteClass = id => dispatch => {
       });
   };
   
-  export const updateClass = (id, note) => dispatch => { //getting id for note to chnage and new note
+  export const updateCourse = (id, note) => dispatch => { //getting id for note to change and new note
     axios
       .patch(`/api/v1/notes/${id}/`, note)
       .then(response => {
         dispatch({
-          type: UPDATE_CLASS,
+          type: UPDATE_COURSE,
           payload: response.data
         });
       })
