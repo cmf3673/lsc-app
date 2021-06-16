@@ -12,14 +12,14 @@ class CourseList extends Component {
   }
 
   render() {
-    const { notes } = this.props.notes;
+    const { courses } = this.props.courses;
 
-    if (notes.length === 0) {
+    if (courses.length === 0) {
       return <h2>Please add your first course</h2>;
     }
 
-    let items = notes.map(note => {
-      return <Course key={note.id} course={note} />;
+    let items = courses.map(course => {
+      return <Course key={course.id} course={course} />;
     });
 
     return (
@@ -34,11 +34,11 @@ class CourseList extends Component {
 
 CourseList.propTypes = {
   getCourses: PropTypes.func.isRequired,
-  notes: PropTypes.object.isRequired
+  courses: PropTypes.object.isRequired
 };
 
 const mapStateToProps = state => ({
-  notes: state.notes
+  courses: state.courses
 });
 
 export default connect(mapStateToProps, {

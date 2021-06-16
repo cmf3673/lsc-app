@@ -1,7 +1,7 @@
 import { GET_COURSES, ADD_COURSE, DELETE_COURSE, UPDATE_COURSE } from "./CourseTypes";
 
 const initialState = {
-  notes: []
+  courses: []
 };
 
 export const notesReducer = (state = initialState, action) => {
@@ -9,20 +9,20 @@ export const notesReducer = (state = initialState, action) => {
     case GET_COURSES:
       return {
         ...state,
-        notes: action.payload // assign to notes in store
+        courses: action.payload // assign to notes in store
         };
     case ADD_COURSE:
       return {
         ...state,
-        notes: [...state.notes, action.payload] // append new note to list
+        courses: [...state.courses, action.payload] // append new note to list
         };
     case DELETE_COURSE:
         return {
           ...state,
-          notes: state.notes.filter((item, index) => item.id !== action.payload) // set notes to list without deleted note
+          courses: state.courses.filter((item, index) => item.id !== action.payload) // set notes to list without deleted note
         };
     case UPDATE_COURSE:
-        const updatedNotes = state.notes.map(item => {
+        const updatedCourses = state.courses.map(item => {
           if (item.id === action.payload.id) {
             return { ...item, ...action.payload }; // assign payload to specific note to update
           }
@@ -30,7 +30,7 @@ export const notesReducer = (state = initialState, action) => {
         });
         return {
           ...state,
-          notes: updatedNotes // returns updated notes (created with map method to update)
+          courses: updatedCourses // returns updated notes (created with map method to update)
         };
       default:
         return state;
