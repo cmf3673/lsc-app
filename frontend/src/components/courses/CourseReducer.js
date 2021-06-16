@@ -4,7 +4,7 @@ const initialState = {
   courses: []
 };
 
-export const notesReducer = (state = initialState, action) => {
+export const courseReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_COURSES:
       return {

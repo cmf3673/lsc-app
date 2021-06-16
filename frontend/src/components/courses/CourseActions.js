@@ -4,7 +4,7 @@ import { GET_COURSES, ADD_COURSE, DELETE_COURSE, UPDATE_COURSE } from "./CourseT
 
 export const getCourses = () => dispatch => {
   axios
-    .get("/api/v1/notes/")
+    .get("/api/v1/courses/")
     .then(response => {
       dispatch({
         type: GET_COURSES,
@@ -18,7 +18,7 @@ export const getCourses = () => dispatch => {
 
 export const addCourse = course => dispatch => {
   axios
-    .post("/api/v1/notes/", course)
+    .post("/api/v1/courses/", course)
     .then(response => {
       dispatch({
         type: ADD_COURSE,
@@ -32,7 +32,7 @@ export const addCourse = course => dispatch => {
 
 export const deleteCourse = id => dispatch => {
     axios
-      .delete(`/api/v1/notes/${id}/`)
+      .delete(`/api/v1/courses/${id}/`)
       .then(response => {
         dispatch({
           type: DELETE_COURSE,
@@ -46,7 +46,7 @@ export const deleteCourse = id => dispatch => {
   
   export const updateCourse = (id, course) => dispatch => { //getting id for note to change and new note
     axios
-      .patch(`/api/v1/notes/${id}/`, course)
+      .patch(`/api/v1/courses/${id}/`, course)
       .then(response => {
         dispatch({
           type: UPDATE_COURSE,
