@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { deleteCourse, updateCourse } from "./NotesActions";
+import { deleteCourse, updateCourse } from "./CourseActions";
 import { Button } from "react-bootstrap";
 
 class Course extends Component {

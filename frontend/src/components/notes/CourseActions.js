@@ -1,6 +1,6 @@
 import axios from "axios";
 import { toastOnError } from "../../utils/Utils";
-import { GET_COURSES, ADD_COURSE, DELETE_COURSE, UPDATE_COURSE } from "./NotesTypes";
+import { GET_COURSES, ADD_COURSE, DELETE_COURSE, UPDATE_COURSE } from "./CourseTypes";
 
 export const getCourses = () => dispatch => {
   axios

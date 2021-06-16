@@ -2,9 +2,9 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
-import { getCourses } from "./NotesActions";
+import { getCourses } from "./CourseActions";
 
-import Course from "./Note";
+import Course from "./Course";
 
 class CourseList extends Component {
   componentDidMount() {

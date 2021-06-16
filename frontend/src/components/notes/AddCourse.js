@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { withRouter } from "react-router-dom";
 import { Button, Form } from "react-bootstrap";
-import { addCourse } from "./NotesActions";
+import { addCourse } from "./CourseActions";
 
 class AddCourse extends Component {
   constructor(props) {

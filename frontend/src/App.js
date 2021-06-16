@@ -22,7 +22,7 @@ class App extends Component {
             <Route path="/dashboard" component={requireAuth(Dashboard)} />
             <Route exact path="/" component={Home} />
             <Route path="*">
-                <h1>404 Bitch</h1>
+                <h1>404: Page not found</h1>
             </Route>
           </Switch>
         </Root>

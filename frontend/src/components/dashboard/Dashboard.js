@@ -6,8 +6,8 @@ import { withRouter } from "react-router-dom";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { logout } from "../login/LoginActions";
 
-import NotesList from "../notes/NotesList";
-import AddNote from "../notes/AddNote";     
+import NotesList from "../notes/CourseList";
+import AddNote from "../notes/AddCourse";     
 
 class Dashboard extends Component {
   onLogout = () => {
