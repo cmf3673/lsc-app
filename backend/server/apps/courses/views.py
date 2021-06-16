@@ -1,12 +1,12 @@
 from django.shortcuts import render
 from rest_framework import viewsets 
-from apps.notes.models import Note 
-from apps.notes.serializers import NoteSerializer
+from apps.courses.models import Course 
+from apps.courses.serializers import CourseSerializer
 
-class NoteViewSet(viewsets.ModelViewSet):
+class CourseViewSet(viewsets.ModelViewSet):
 
-    serializer_class = NoteSerializer
-    queryset = Note.objects.all()
+    serializer_class = CourseSerializer
+    queryset = Course.objects.all()
 
     # Overwriting to save info about who created note
     def perform_create(self, serializer):

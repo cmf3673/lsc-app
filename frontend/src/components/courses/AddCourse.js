@@ -9,7 +9,7 @@ class AddCourse extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: ""
+      title: ""
     };
   }
   onChange = e => {
@@ -18,7 +18,7 @@ class AddCourse extends Component {
 
   onAddClick = () => {
     const course = {
-      content: this.state.content
+      title: this.state.title
     };
     this.props.addCourse(course);
   };
@@ -34,7 +34,7 @@ class AddCourse extends Component {
               rows={3}
               name="content"
               placeholder="Enter course name"
-              value={this.content}
+              value={this.title}
               onChange={this.onChange}
             />
           </Form.Group>

@@ -30,7 +30,7 @@ class Course extends Component {
       <div>
         <hr />
         <p>
-          (id:{course.id}) {course.content}
+          (id:{course.id}) {course.title} {/* FIXME: not showing up */}
         </p>
         <Button variant="danger" size="sm" onClick={this.onDeleteClick}>
           Delete

@@ -6,8 +6,8 @@ import { withRouter } from "react-router-dom";
 import { Container, Navbar, Nav } from "react-bootstrap";
 import { logout } from "../login/LoginActions";
 
-import NotesList from "../notes/CourseList";
-import AddNote from "../notes/AddCourse";     
+import CourseList from "../courses/CourseList";
+import AddCourse from "../courses/AddCourse";     
 
 class Dashboard extends Component {
   onLogout = () => {
@@ -29,8 +29,8 @@ class Dashboard extends Component {
           </Navbar.Collapse>
         </Navbar>
         <Container>
-          <NotesList />
-          <AddNote />
+          <CourseList />
+          <AddCourse />
         </Container>
       </div>
     );

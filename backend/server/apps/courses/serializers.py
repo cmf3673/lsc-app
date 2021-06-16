@@ -1,10 +1,11 @@
+from apps.courses.models import Course
 from rest_framework import serializers
-from apps.notes.models import Note
 
-class NoteSerializer(serializers.ModelSerializer):
+
+class CourseSerializer(serializers.ModelSerializer):
 
     class Meta:
-        model = Note
+        model = Course
         read_only_fields = (
             "id",
             "created_at",
@@ -14,5 +15,5 @@ class NoteSerializer(serializers.ModelSerializer):
             "id",
             "created_at",
             "created_by",
-            "content"
+            "title"
         )
